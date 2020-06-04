@@ -5,6 +5,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Bienvenido a DOMINGO!!!</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet"> 
+        <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+        <link  id="estilo" rel="stylesheet" href="../css/estilos.css">
         <link rel="stylesheet" type="text/css" href="../css/style.css">
         <script type="text/javascript">
 			function comprobarDatosFormulario(){
@@ -52,14 +55,19 @@
 		</script>
     </head>
     <body>
-    
+        <nav>
+            <button class="switch" id="switch">
+                <span><i class="fas fa-sun"></i></span>
+                <span><i class="fas fa-moon"></i></span>
+            </button>			
+        </nav>
 
         <div class="signInContainer">
         
             <div class="column">
 
                 <div class="header">
-                <img src="assets/images/logo.png" title="Logo" alt="Domingo logo">
+                <img src="../images/logo.png" title="Logo" alt="Domingo logo">
                     <h3>Registrate</h3>
                     <span>Para continuar Domingo</span>
                 </div>
@@ -83,6 +91,8 @@
             </div>
         
         </div>
+
+        <script src="../js/main.js"></script>
 </body>
 <script>
 function comprobarEmail() {
