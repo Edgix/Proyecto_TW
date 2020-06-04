@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenido a DOMINGO!!!</title>
-    <link rel="stylesheet" type="text/css" href="assets/style/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script src= "../js/jquery.js"></script>
     <script type="text/javascript">
         function comprobarDatosFormulario() {
             var comprobacion = false;
@@ -58,7 +59,7 @@
         <div class="column">
 
             <div class="header">
-                <img src="assets/images/logo.png" title="Logo" alt="Domingo logo">
+                <img src="../images/logo.png" title="Logo" alt="Domingo logo">
                 <h3>Registrate</h3>
                 <span>Para continuar Domingo</span>
             </div>
@@ -67,7 +68,7 @@
             <form name="formularioUsuario" action="exito.php" method="get" onsubmit="return comprobarDatosFormulario()">
                 <label>Nombre:<input id="NombreFormUsuario" type="text" name="nombre" /></label><br />
                 <label>Apellidos: <input id="NombreAP" type="text" name="ap" /></label><br />
-                <label>E-mail:<input id="Nombremail" type="email" name="mail" /></label><br />
+                <label>E-mail:<input id="Nombremail" type="email" name="mail" onBlur="comprobarEmail()" /> <span id="estadoemail"> </span></label >  <br />
                 <label>Contraseña:<input id="Nombrecontra" type="password" name="contra" /></label><br />
                 <label>Numero de la tarjeta: <input id="Nombretarj" type="number" name="tarj" /></label><br />
                 <label>Fecha de expiracion <input id="Nombrefecha" type="date" name="fecha" /></label><br />
@@ -83,5 +84,17 @@
     </div>
 
 </body>
-
+<script>
+function comprobarEmail() {
+	jQuery.ajax({
+	url: "VerificaMail.php",
+	data:'email='+$("#Nombremail").val(),
+	type: "POST",
+	success:function(data){
+		$("#estadoemail").html(data);
+	},
+	error:function (){}
+	});
+}
+</script>
 </html>
