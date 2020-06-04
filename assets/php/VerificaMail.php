@@ -11,4 +11,4 @@ if(!empty($_POST["email"])) {
       echo "<span class='estado-disponible-email'> Email Disponible.</span>";
   }
 }
- 
+ ?>
