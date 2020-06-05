@@ -576,8 +576,12 @@ button i {
     color: #000;
 }
 
-
-
+.perfilContainer {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .alertError{
     color:#dc1928;
