@@ -7,6 +7,7 @@
         <title>Bienvenido a DOMINGO!!!</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet"> 
         <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+        <script src= "../js/jquery.js"></script>
         <link  id="estilo" rel="stylesheet" href="../css/estilos.css">
         <link rel="stylesheet" type="text/css" href="../css/style.css">
         <script type="text/javascript">
@@ -77,7 +78,7 @@
             
             <label>Nombre:<input id="NombreFormUsuario" type="text" name="nombre" /></label><br/>
             <label>Apellidos: <input id="NombreAP" type="text" name="apellido" /></label><br/>
-            <label>E-mail:<input id="Nombremail" type="email" name="correo" /></label><br/>
+            <label>E-mail:<input id="Nombremail" type="email" name="mail" onBlur="comprobarEmail()" /> <span id="estadoemail"> </span></label >  <br />
             <label>Contraseña:<input id="Nombrecontra" type="password" name="contrasenia" /></label><br/>
             <label>Numero de la tarjeta: <input id="Nombretarj" type="number" name="tarjeta" /></label><br/>
             <label>Fecha de expiracion <input id="Nombrefecha" type="date" name="fechaEx" /></label><br/>
