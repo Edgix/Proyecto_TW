@@ -10,7 +10,16 @@
         <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
         <link  id="estilo" rel="stylesheet" href="assets/css/estilos.css">
         <link  id="estilo" rel="stylesheet" href="assets/css/style.css">
-			
+        
+        <script>
+            function selectOnlyThis(id){
+            var myCheckbox = document.getElementsByName("myCheckbox");
+            Array.prototype.forEach.call(myCheckbox,function(el){
+                el.checked = false;
+            });
+  id.checked = true;
+}
+        </script>
     </head>
     <body>
         <nav>
