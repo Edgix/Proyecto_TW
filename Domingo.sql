@@ -64,8 +64,8 @@ CREATE TABLE IF NOT EXISTS `domingoooo`.`contenido` (
   `idPelicula` INT NOT NULL,
   `idSerie` INT NOT NULL,
   PRIMARY KEY (`idContenido`),
-  INDEX `fk_contenido_pelicula1_idx` (`idPelicula` ASC) VISIBLE,
-  INDEX `fk_contenido_serie1_idx` (`idSerie` ASC) VISIBLE,
+  INDEX `fk_contenido_pelicula1_idx` (`idPelicula` ASC),
+  INDEX `fk_contenido_serie1_idx` (`idSerie` ASC),
   CONSTRAINT `fk_contenido_pelicula1`
     FOREIGN KEY (`idPelicula`)
     REFERENCES `domingoooo`.`pelicula` (`idPelicula`)
@@ -110,8 +110,8 @@ CREATE TABLE IF NOT EXISTS `domingoooo`.`perfil` (
   `idCuenta` INT(11) NOT NULL,
   `idContenido` INT(11) NOT NULL,
   PRIMARY KEY (`idPerfil`),
-  INDEX `fk_perfil_cuenta_idx` (`idCuenta` ASC) VISIBLE,
-  INDEX `fk_perfil_contenido1_idx` (`idContenido` ASC) VISIBLE,
+  INDEX `fk_perfil_cuenta_idx` (`idCuenta` ASC),
+  INDEX `fk_perfil_contenido1_idx` (`idContenido` ASC),
   CONSTRAINT `fk_perfil_contenido1`
     FOREIGN KEY (`idContenido`)
     REFERENCES `domingoooo`.`contenido` (`idContenido`)

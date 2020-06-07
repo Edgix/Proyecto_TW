@@ -60,7 +60,10 @@
             <button class="switch" id="switch">
                 <span><i class="fas fa-sun"></i></span>
                 <span><i class="fas fa-moon"></i></span>
-            </button>			
+            </button>
+            <span>
+                <i class="cerrar-sesion"><a href="../../includes/logout.php">Cerrar sesión</a></i>		
+            </span>			
         </nav>
 
         <div class="signInContainer">
