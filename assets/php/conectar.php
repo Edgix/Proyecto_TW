@@ -10,7 +10,7 @@ $variable1=" PHP 5";
 <body>
    
     <?php
-        $conexion= new mysqli("localhost","root","root1234","Domingo");
+        $conexion= new mysqli("localhost","root","root1234","domingoooo");
     ?>
 </body> 
 </html>

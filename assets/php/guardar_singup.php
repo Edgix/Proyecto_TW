@@ -12,13 +12,13 @@ $variable1=" PHP 5";
         include("conectar.php");
         $nombre= $_POST['nombre'];
         $apellido= $_POST['apellido'];
-        $correo= $_POST['correo'];
+        $correo= $_POST['mail'];
         $contrasenia= $_POST['contrasenia'];
         $tarjeta= $_POST['tarjeta'];
         $fechaEx = $_POST['fechaEx'];
 
         
-        if(buscaRepetido($nombre,$apellido,$conexion) == 1){
+        if(buscaRepetido( $tarjeta,$correo,$conexion) == 1){
             echo '<script>alert("El cliente ya existe");</script>';
             include 'registrar.php';
         }else{
@@ -36,7 +36,7 @@ $variable1=" PHP 5";
 
         function buscaRepetido($nom,$ape,$conexion){
             $sql= "SELECT * from cuenta
-                where nombre='$nom' and apellido='$ape'";
+                where correo='$nom' and tarjeta='$ape'";
                 $result=mysqli_query($conexion,$sql);
 
             if(mysqli_num_rows($result) > 0){
