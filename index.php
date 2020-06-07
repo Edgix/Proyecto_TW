@@ -33,7 +33,7 @@
                 <span>Para continuar en DOMINGO!</span>
             </div>
 
-            <form action="p03_autos.php" method="POST">
+            <form action="assets/php/login.php" method="POST">
                 <input type="text" name="username" placeholder="username" required>
                 <input type="password" name="password" placeholder="Password" required>
                 <input type="submit" name="submitButton" value="Iniciar Sesión">
