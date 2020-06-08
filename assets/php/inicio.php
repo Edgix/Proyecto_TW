@@ -80,25 +80,42 @@ function make_slides($connect)
 	<title>Domingo</title>
 </head>
 <body>
-    <nav>
-        <button class="switch" id="switch">
-            <span><i class="fas fa-sun"></i></span>
-            <span><i class="fas fa-moon"></i></span>
-        </button>
-        <span>
-          <i class="cerrar-sesion"><a href="../../includes/logout.php">Cerrar sesión</a></i>		
-        </span>			
-    </nav>
-	<header>
+	<nav>
+		<div class="enlaces">
+            <button class="switch" id="switch">
+                    <span><i class="fas fa-sun"></i></span>
+                    <span><i class="fas fa-moon"></i></span>
+            </button>
+			<header>
+				<ul><li class="submenu"><a href="#" class="ne">&#9776;</a>
+						<ul class="children">
+							<li><a href="">Perfil 1</a></li>
+							<li><a href="">Perfil 2</a></li>
+							<li><a href="">Perfil 3</a></li>
+							<li><a href="">Agregar Perfil</a></li>
+							<li class="cerrar-sesion"><a href="../../includes/logout.php">Cerrar sesión</a></li>		
+						</ul>
+                </li></ul>
+                <!-- <button class="switch" id="switch">
+                    <span><i class="fas fa-sun"></i></span>
+                    <span><i class="fas fa-moon"></i></span>
+            </button> -->
+            </header>	
+		</div>
+	</nav>
+
+
   <header>
 		<div class="contenedor">
             <center><img src="../images/logo.png" title="Logo" alt="Site logo" /></center>
 			<nav>
-				<a href="#" class="activo">Inicio</a>
-				<a href="#">Programas</a>
-				<a href="#">Películas</a>
-				<a href="#">Más Recientes</a>
-				<a href="#">Mi lista</a>
+                <div class="enlaces">
+                    <a href="#" class="activo">Inicio</a>
+                    <a href="#">Programas</a>
+                    <a href="#">Películas</a>
+                    <a href="#">Más Recientes</a>
+                    <a href="#">Mi lista</a>
+                </div>
 			</nav>
 		</div>
   </header>
@@ -122,19 +139,17 @@ function make_slides($connect)
     </a>
    </div>
    <div class="pelicula-principal">
-			<div class="contenedor">
-				<h3 class="titulo">Pelicula</h3>
-				<p class="Sintesis">
-                    nepe
-
-                </p>
-				<button role="button" class="boton"><i class="fas fa-play"></i>Reproducir</button>
-				<button role="button" class="boton"><i class="fas fa-info-circle"></i>Más información</button>
-      </div>
+		<div class="contenedor">
+			<h3 class="titulo">Pelicula</h3>
+			<p class="Sintesis">
+                nepe
+            </p>
+			<button role="button" class="boton"><i class="fas fa-play"></i>Reproducir</button>
+			<button role="button" class="boton"><i class="fas fa-info-circle"></i>Más información</button>
+        </div>
   </div>
 	
-            <script src="../js/main.js"></script>
-            <script src="../js/jquery.js"></script>
-        <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/jquery.js"></script>
 </body>
 </html>
