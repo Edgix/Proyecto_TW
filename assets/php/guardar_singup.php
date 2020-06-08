@@ -18,31 +18,29 @@ $variable1=" PHP 5";
         $fechaEx = $_POST['fechaEx'];
 
         
-        if(buscaRepetido( $tarjeta,$correo,$conexion) == 1){
-            echo '<script>alert("El cliente ya existe");</script>';
-            include 'registrar.php';
+        if(buscaRepetido( $correo, $tarjeta,$conexion)){
+            header("location: signup.php?fallo=true");
         }else{
             $query= "INSERT INTO cuenta (correo,tarjeta,fechaEx,contrasenia,nombre,apellido) VALUES('$correo','$tarjeta','$fechaEx','$contrasenia','$nombre','$apellido')";
             $resultado= $conexion->query($query);
             if($resultado){
-                echo '<script>alert("Se agrego correctamente");</script>';
-                //include 'index.php';
-            }else{
-                echo '<script>alert("No se puedo agregar");</script>';
-                include 'registrar.php';
+                session_start();
+                $query2 = "SELECT  idCuenta  FROM cuenta WHERE correo = '$correo' AND contrasenia = '$contrasenia'  ";
+                $resultado= $conexion->query($query2);
+                $resultado = $resultado->fetch_assoc();
+                $_SESSION["usuario"] =$resultado["idCuenta"];
+                include '../agregar_perfil.html';
             }
         }
 
 
         function buscaRepetido($nom,$ape,$conexion){
-            $sql= "SELECT * from cuenta
-                where correo='$nom' and tarjeta='$ape'";
-                $result=mysqli_query($conexion,$sql);
-
-            if(mysqli_num_rows($result) > 0){
-                return 1;
+            $query= "SELECT * FROM cuenta WHERE correo =' $nom ' OR tarjeta = ' $ape ' ";
+            $resultado= $conexion->query($query);
+            if($resultado->num_rows>0){
+                return true;
             }else{
-                return 0;
+                return false;
             }
         }
         

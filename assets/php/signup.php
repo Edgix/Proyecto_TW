@@ -85,10 +85,7 @@
             <label>Contraseña:<input id="Nombrecontra" type="password" name="contrasenia" /></label><br/>
             <label>Numero de la tarjeta: <input id="Nombretarj" type="number" name="tarjeta" /></label><br/>
             <label>Fecha de expiracion <input id="Nombrefecha" type="date" name="fechaEx" /></label><br/>
-
-			<a href= "../../agregar_perfil.html"><label><input id ="botonEnvio1" type="submit" value="Enviar"></label></a>
-
-        <input type="reset">
+            <label><input id ="botonEnvio1" type="submit" value="Enviar"></a>
         </p>
 
     </form>
