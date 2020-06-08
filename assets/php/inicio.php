@@ -2,12 +2,14 @@
 $connect = mysqli_connect("localhost", "root", "root1234", "Domingo");
 function make_query($connect)
 {
+ $query = "SELECT * FROM pelicula ORDER BY idPelicula ASC";
     //QUERY DE LA BASE DE DATOS, PARA PELICULAS = pelicula, 
     //Accion = 1, Comedia =2, Drama = 3, Terror = 4
  $query = "SELECT * FROM serie WHERE idCategoria = 3";
  $result = mysqli_query($connect, $query);
  return $result;
 }
+
 //Indicadores del slide
 function make_slide_indicators($connect)
 {
@@ -32,6 +34,7 @@ function make_slide_indicators($connect)
  }
  return $output;
 }
+
 //Funcion que muestra las imagenes
 function make_slides($connect)
 {
@@ -51,12 +54,12 @@ function make_slides($connect)
   //En caso de cambiar a peliculas, cambiar carpeta de /series/ a /peliculas/
   //Los campos Imagen y Titulo se mantienen igual, tambien genero
   $output .= '
+  <center><img src="data:image/jpeg;base64,'.base64_encode($row['Imagen']).'"/></center>
   <center><img src="../images/series/'.$row["Imagen"].'" alt="'.$row["Titulo"].'" /></center> 
   <br/>
   <div class="carousel-caption">
   <h3>'.$row["Titulo"].'</h3>
   <h3>'.$row["Genero"].'</h3>
-
  </div>
   </div>
   ';
@@ -65,7 +68,6 @@ function make_slides($connect)
  return $output;
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -76,7 +78,6 @@ function make_slides($connect)
     <link  id="estilo" rel="stylesheet" href="../css/estilos.css">
     <link  id="estilo" rel="stylesheet" href="../css/style.css">
     <link  id="estilo" rel="stylesheet" href="../css/bootstrap.min.css">
-
 	<title>Domingo</title>
 </head>
 <body>
@@ -89,7 +90,6 @@ function make_slides($connect)
           <i class="cerrar-sesion"><a href="../../includes/logout.php">Cerrar sesión</a></i>		
         </span>			
     </nav>
-
 	<header>
   <header>
 		<div class="contenedor">
@@ -110,7 +110,6 @@ function make_slides($connect)
     <ol class="carousel-indicators">
     <?php echo make_slide_indicators($connect); ?>
     </ol>
-
     <div class="carousel-inner">
      <?php echo make_slides($connect); ?>
     </div>
@@ -118,18 +117,17 @@ function make_slides($connect)
      <span class="glyphicon glyphicon-chevron-left"></span>
      <span class="sr-only">Previous</span>
     </a>
-
     <a class="right carousel-control" href="#carrusel_dinamico" data-slide="next">
      <span class="glyphicon glyphicon-chevron-right"></span>
      <span class="sr-only">Next</span>
     </a>
-
    </div>
    <div class="pelicula-principal">
 			<div class="contenedor">
 				<h3 class="titulo">Pelicula</h3>
 				<p class="Sintesis">
-                    
+                    nepe
+
                 </p>
 				<button role="button" class="boton"><i class="fas fa-play"></i>Reproducir</button>
 				<button role="button" class="boton"><i class="fas fa-info-circle"></i>Más información</button>

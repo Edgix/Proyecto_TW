@@ -40,7 +40,7 @@
                 <br>
             </form>
 
-            <a href="assets/php/signup.php" class="signInMessage">Necesitas una cuenta? Registrate aqui!</a>
+            <a href="assets/php/signup.php" class="signInMessage">¿Necesitas una cuenta? Registrate aqui!</a>
         </div>
     </div>
 
