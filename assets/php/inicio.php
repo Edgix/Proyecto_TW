@@ -2,7 +2,6 @@
 $connect = mysqli_connect("localhost", "root", "root1234", "Domingo");
 function make_query($connect)
 {
- $query = "SELECT * FROM pelicula ORDER BY idPelicula ASC";
     //QUERY DE LA BASE DE DATOS, PARA PELICULAS = pelicula, 
     //Accion = 1, Comedia =2, Drama = 3, Terror = 4
  $query = "SELECT * FROM serie WHERE idCategoria = 3";
