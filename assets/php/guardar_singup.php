@@ -29,7 +29,7 @@ $variable1=" PHP 5";
                 $resultado= $conexion->query($query2);
                 $resultado = $resultado->fetch_assoc();
                 $_SESSION["usuario"] =$resultado["idCuenta"];
-                include '../agregar_perfil.html';
+                include '../html/agregar_perfil.html';
             }
         }
 
