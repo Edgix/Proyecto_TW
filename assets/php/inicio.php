@@ -5,6 +5,7 @@ function make_query($connect)
     //QUERY DE LA BASE DE DATOS, PARA PELICULAS = pelicula, 
     //Accion = 1, Comedia =2, Drama = 3, Terror = 4
  $query = "SELECT * FROM serie WHERE idCategoria = 3";
+ // $query = "SELECT * FROM pelicula ORDER BY idPelicula ASC";
  $result = mysqli_query($connect, $query);
  return $result;
 }
@@ -53,7 +54,6 @@ function make_slides($connect)
   //En caso de cambiar a peliculas, cambiar carpeta de /series/ a /peliculas/
   //Los campos Imagen y Titulo se mantienen igual, tambien genero
   $output .= '
-  <center><img src="data:image/jpeg;base64,'.base64_encode($row['Imagen']).'"/></center>
   <center><img src="../images/series/'.$row["Imagen"].'" alt="'.$row["Titulo"].'" /></center> 
   <br/>
   <div class="carousel-caption">
@@ -80,42 +80,25 @@ function make_slides($connect)
 	<title>Domingo</title>
 </head>
 <body>
-	<nav>
-		<div class="enlaces">
-            <button class="switch" id="switch">
-                    <span><i class="fas fa-sun"></i></span>
-                    <span><i class="fas fa-moon"></i></span>
-            </button>
-			<header>
-				<ul><li class="submenu"><a href="#" class="ne">&#9776;</a>
-						<ul class="children">
-							<li><a href="">Perfil 1</a></li>
-							<li><a href="">Perfil 2</a></li>
-							<li><a href="">Perfil 3</a></li>
-							<li><a href="">Agregar Perfil</a></li>
-							<li class="cerrar-sesion"><a href="../../includes/logout.php">Cerrar sesión</a></li>		
-						</ul>
-                </li></ul>
-                <!-- <button class="switch" id="switch">
-                    <span><i class="fas fa-sun"></i></span>
-                    <span><i class="fas fa-moon"></i></span>
-            </button> -->
-            </header>	
-		</div>
-	</nav>
-
-
+    <nav>
+        <button class="switch" id="switch">
+            <span><i class="fas fa-sun"></i></span>
+            <span><i class="fas fa-moon"></i></span>
+        </button>
+        <span>
+          <i class="cerrar-sesion"><a href="../../includes/logout.php">Cerrar sesión</a></i>		
+        </span>			
+    </nav>
+	<header>
   <header>
 		<div class="contenedor">
             <center><img src="../images/logo.png" title="Logo" alt="Site logo" /></center>
 			<nav>
-                <div class="enlaces">
-                    <a href="#" class="activo">Inicio</a>
-                    <a href="#">Programas</a>
-                    <a href="#">Películas</a>
-                    <a href="#">Más Recientes</a>
-                    <a href="#">Mi lista</a>
-                </div>
+				<a href="#" class="activo">Inicio</a>
+				<a href="#">Programas</a>
+				<a href="#">Películas</a>
+				<a href="#">Más Recientes</a>
+				<a href="#">Mi lista</a>
 			</nav>
 		</div>
   </header>
@@ -139,17 +122,19 @@ function make_slides($connect)
     </a>
    </div>
    <div class="pelicula-principal">
-		<div class="contenedor">
-			<h3 class="titulo">Pelicula</h3>
-			<p class="Sintesis">
-                nepe
-            </p>
-			<button role="button" class="boton"><i class="fas fa-play"></i>Reproducir</button>
-			<button role="button" class="boton"><i class="fas fa-info-circle"></i>Más información</button>
-        </div>
+			<div class="contenedor">
+				<h3 class="titulo">Pelicula</h3>
+				<p class="Sintesis">
+                    nepe
+
+                </p>
+				<button role="button" class="boton"><i class="fas fa-play"></i>Reproducir</button>
+				<button role="button" class="boton"><i class="fas fa-info-circle"></i>Más información</button>
+      </div>
   </div>
 	
-    <script src="../js/main.js"></script>
-    <script src="../js/jquery.js"></script>
+            <script src="../js/main.js"></script>
+            <script src="../js/jquery.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
 </body>
 </html>
