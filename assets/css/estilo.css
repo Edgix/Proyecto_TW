@@ -240,7 +240,7 @@ color: white;
 display: block;
 text-decoration: none;
 padding: 20px;
-width: 50%;
+width: 100%;
 }
   
 ul li:hover .children{
@@ -250,9 +250,9 @@ ul li .children{
 display: none;
 background: #011826;
 position: absolute;
-width: 100%;
+width: 150%;
 z-index: 1000;
-margin-left: -10%;
+margin-left: -50%;
 }
   
 ul li .children li{
