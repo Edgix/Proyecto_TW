@@ -8,6 +8,7 @@
         <link rel="shortcut icon" type="image/ico" href="assets/images/monflix.ico">
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet"> 
         <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+        <script src="../js/jquery.js"></script> 
         <link  id="estilo" rel="stylesheet" href="../css/estilos.css">
         <link  id="estilo" rel="stylesheet" href="../css/style.css">
         
@@ -41,17 +42,11 @@
                     <h2>Crea tu perfil!</h2>
                 </div>
             
-    <form name ="formularioPerfil" action= "../php/guardar_perfil.php" method="POST" onsubmit="return comprobarDatosFormulario()">
+    <form name ="formularioPerfil" action= "guardar_perfil.php" method="POST" onsubmit="return comprobarDatosFormulario()">
             
             <label>Nombre:<input id="NombreFormPerfil" type="text" name="nombreP" /></label><br/>
             <h3>Mostrar contenido para: </h3>
-            <div class="seleccionarOpcion">
-                <div class="ninios-checkbox">
-                <input type="checkbox" id="Check1" value="1" name="check" onclick="selectOnlyThis(this.id)" > Niños</input>
-                </div>
-            <div class="adultos-checkbox">
-                <input type="checkbox" id="Check2" value="2" name="check" onclick="selectOnlyThis(this.id)"> Adultos</input>
-            </div>
+            <select id="Select"></select>
         </div>
         <h3>Idioma:</h3>
         <select name='idioma'>
