@@ -57,13 +57,15 @@
             </nav>
         </div>
     </header>
+    <h3>Tus peliculas:</h3>
+                </br>
     <div class="container">
         <div class="col-md-15">
             <div class="carousel slide multi-image-slider" id="theCarousel">
                 <div class="carousel-inner">
                     <?php
-                    $conn = mysqli_connect("localhost", "root", "root1234", "domingo");
-                    $sqlQuery = "SELECT * FROM pelicula WHERE idGenero = 2";
+                    $conn = mysqli_connect("localhost", "root", "root1234", "Domingo");
+                    $sqlQuery = "SELECT * FROM pelicula WHERE idClasificacion = 2 ORDER BY pelicula.idPelicula ASC";
                     $resultSet = mysqli_query($conn, $sqlQuery);
                     $setActive = 0;
                     $sliderHtml = '';
@@ -84,6 +86,39 @@
                 <a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
                 <a class="right carousel-control" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
             </div>
+            
+        </div>
+    </div>
+   <h3>Tus series:</h3>
+                </br>
+    <div class="container">
+        <div class="col-md-15">
+            <div class="carousel slide multi-image-slider" id="theCarousel2">
+                <div class="carousel-inner">
+                    <?php
+                    $conn = mysqli_connect("localhost", "root", "root1234", "Domingo");
+                    $sqlQuery = "SELECT * FROM serie WHERE idClasificacion = 1 ORDER BY serie.idSerie ASC";
+                    $resultSet = mysqli_query($conn, $sqlQuery);
+                    $setActive = 0;
+                    $sliderHtml = '';
+                    while ($sliderImage = mysqli_fetch_assoc($resultSet)) {
+                        $activeClass = "";
+                        if (!$setActive) {
+                            $setActive = 1;
+                            $activeClass = 'active';
+                        }
+                        $sliderHtml .= "<div class='item " . $activeClass . "'>";
+                        $sliderHtml .= "<div class='col-xs-2'><a href='" . $sliderImage['idSerie'] . "'>";
+                        $sliderHtml .= "<img src='../images/series/" . $sliderImage['Imagen'] . "' class='img-responsive'>";
+                        $sliderHtml .= "</a></div></div>";
+                    }
+                    echo $sliderHtml;
+                    ?>
+                </div>
+                <a class="left carousel-control" href="#theCarousel2" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                <a class="right carousel-control" href="#theCarousel2" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+            </div>
+            
         </div>
     </div>
     <script src="../js/main.js"></script>
