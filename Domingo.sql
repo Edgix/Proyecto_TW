@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-06-2020 a las 04:03:23
+-- Tiempo de generación: 09-06-2020 a las 07:46:39
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.2.12
 
@@ -59,7 +59,7 @@ CREATE TABLE `cuenta` (
 CREATE TABLE `pelicula` (
   `idPelicula` int(11) NOT NULL,
   `Titulo` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
-  `Imagen` longblob NOT NULL,
+  `Imagen` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `Duracion` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
   `Genero` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
   `idGenero` int(11) NOT NULL,
