@@ -26,7 +26,8 @@ a {
   max-width: 1000px;
   width: 90%;
   margin: auto;
-  padding: 50px 0;
+  display: block;
+  justify-content: space-between;
 }
 
 nav {
@@ -53,7 +54,9 @@ body.dark nav {
   -webkit-box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.16);
           box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.16);
 }
-
+body.div {
+  margin-top: 50px;
+}
 body.dark nav a {
   color: #C8C8C8;
 }
@@ -223,6 +226,8 @@ color: black;
 }
 header{
 width: 100%;
+text-align: center;
+margin-top: 5px;
 }
 
 

@@ -8,8 +8,9 @@
     <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
     <script src="../js/jquery.js"></script>
     <script src="../js/bootstrap.min.js"></script>
-    <link id="estilo" rel="stylesheet" href="../css/estilo.css">
     <link id="estilo" rel="stylesheet" href="../css/bootstrap.min.css">
+    <link id="estilo" rel="stylesheet" href="../css/estilo.css">
+
 
     <title>Domingo</title>
 </head>
@@ -42,13 +43,17 @@
     </nav>
     <header>
         <div class="contenedor">
-            <center><img src="../images/logo.png" title="Logo" alt="Site logo" /></center>
+            <img src="../images/logo.png" title="Logo" alt="Site logo" />
             <nav>
-                <a href="#" class="activo">Inicio</a>
-                <a href="#">Programas</a>
-                <a href="#">Películas</a>
-                <a href="#">Más Recientes</a>
-                <a href="#">Mi lista</a>
+                <a href="#" class="activo"> Inicio</a> 
+                <a href="#"> Programas </a>
+                <a href="#"> Películas </a>
+                <a href="#"> Más Recientes </a>
+                <a href="#"> Mi lista </a>
+                <a href="#" class="buscador">
+                    Buscar: 
+                    <input id="buscador" type="input" value="">
+                </a>
             </nav>
         </div>
     </header>
@@ -58,7 +63,7 @@
                 <div class="carousel-inner">
                     <?php
                     $conn = mysqli_connect("localhost", "root", "root1234", "domingo");
-                    $sqlQuery = "SELECT * FROM pelicula WHERE idGenero = 2 ORDER BY `pelicula`.`idPelicula` ASC";
+                    $sqlQuery = "SELECT * FROM pelicula WHERE idGenero = 2";
                     $resultSet = mysqli_query($conn, $sqlQuery);
                     $setActive = 0;
                     $sliderHtml = '';
