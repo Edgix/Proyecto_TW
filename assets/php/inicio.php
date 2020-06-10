@@ -25,8 +25,10 @@
                     <li class="submenu"><a href="#" class="ne">&#9776;</a>
                         <ul class="children">
                             <?php
+                            session_start();
+                            $usu = $_SESSION["usuario"];
                             include("conectar.php");
-                            $query = "SELECT * FROM `perfil` WHERE `idCuenta` = '33'";
+                            $query = "SELECT * FROM `perfil` WHERE `idCuenta` = '$usu'";
                             $resultado = $conexion->query($query);
                             while ($valores = mysqli_fetch_array($resultado)) {
                                 echo '<li class= "eperfil"> <a>' . $valores["nombre"] . '</a></li>';
@@ -64,41 +66,18 @@
             </nav>
         </div>
     </header>
-    <h3>Tus peliculas:</h3>
-    </br>
-    <div class="container">
-        <div class="col-md-15">
-            <div class="carousel slide multi-image-slider" id="theCarousel">
-                <div class="carousel-inner">
-                    
-                </div>
-                <a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-                <a class="right carousel-control" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-            </div>
+    <div class= "Carruseles">
 
-        </div>
-    </div>
-    <h3>Tus series:</h3>
-    </br>
-    <div class="container">
-        <div class="col-md-15">
-            <div class="carousel slide multi-image-slider" id="theCarousel2">
-                <div class="carousel-inner">
-                    
-                </div>
-                <a class="left carousel-control" href="#theCarousel2" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-                <a class="right carousel-control" href="#theCarousel2" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-            </div>
-        </div>
     </div>
     <script src="../js/main.js"></script>
     <script src="../js/jquery.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/multiple-image-slider.js"></script>
-                <script>
-
-                    
-                 </script>
+    <script>
+        $(document).ready(function() {
+            $(".Carruseles").load('carruseles.php');
+        });
+    </script>
 </body>
 
 </html>
