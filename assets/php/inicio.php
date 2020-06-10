@@ -10,7 +10,7 @@
     <script src="../js/bootstrap.min.js"></script>
     <link id="estilo" rel="stylesheet" href="../css/bootstrap.min.css">
     <link id="estilo" rel="stylesheet" href="../css/estilo.css">
-
+5
 
     <title>Domingo</title>
 </head>
@@ -65,7 +65,7 @@
                 <div class="carousel-inner">
                     <?php
                     $conn = mysqli_connect("localhost", "root", "root1234", "Domingo");
-                    $sqlQuery = "SELECT * FROM pelicula WHERE idClasificacion = 2 ORDER BY pelicula.idPelicula ASC";
+                    $sqlQuery = "SELECT * FROM pelicula WHERE idClasificacion = 3 ORDER BY pelicula.idPelicula ASC";
                     $resultSet = mysqli_query($conn, $sqlQuery);
                     $setActive = 0;
                     $sliderHtml = '';
@@ -97,7 +97,7 @@
                 <div class="carousel-inner">
                     <?php
                     $conn = mysqli_connect("localhost", "root", "root1234", "Domingo");
-                    $sqlQuery = "SELECT * FROM serie WHERE idClasificacion = 1 ORDER BY serie.idSerie ASC";
+                    $sqlQuery = "SELECT * FROM serie WHERE idClasificacion = 3 ORDER BY serie.idSerie ASC";
                     $resultSet = mysqli_query($conn, $sqlQuery);
                     $setActive = 0;
                     $sliderHtml = '';

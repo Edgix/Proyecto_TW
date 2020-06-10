@@ -14,17 +14,16 @@ $variable1 = " PHP 5";
   session_start();
   $_SESSION['usuario'];
   $nepe = $_SESSION['usuario'];
-  echo "<script>alert('" . $nepe . "');</script>";
   $nombre = $_POST['nombreP'];
   $varcheck = $_POST['check'];
   $idioma = $_POST['idioma'];
-
-  $query = "INSERT INTO perfil (idCuenta,nombre,idioma, idContenido) VALUES ('$nepe','$nombre', '$idioma', '$varcheck')";
+  $query = "INSERT INTO `perfil` (`nombre`, `idioma`, `foto`, `idCuenta`, `idClasificacion`) VALUES  ('$nombre', '$idioma', 'nepe.jpg', '$nepe','2')";
 
 
   //$resultado= $conexion->query($query);S
   if (mysqli_query($conexion, $query)) {
-    echo "New record created successfully";
+    $_SESSION['perfil'] = $varcheck;
+    header("location: inicio.php");
   } else {
     echo "Error: " . $query . "<br>" . mysqli_error($conexion);
   }

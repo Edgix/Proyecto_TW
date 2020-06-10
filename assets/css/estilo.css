@@ -319,3 +319,30 @@ border-bottom: 1px solid rgba(255, 255, 255, .5);
 body.dark  ul li .children li a{ 
 display: block;
 }
+
+ .negro {
+  display: none;
+  font-size: 2.3em;
+  font-weight: bold;
+  height: 100%;
+  padding-top: 120px;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  z-index: 100;
+  background-color: rgba(15, 15, 15, 0.6);
+  color: #fff;
+  text-shadow: #000 0px 0px 20px;
+transition:0.2s;
+ }
+ #img-responsive > div {
+  height: 150px !important;
+  width: 200px !Important;
+}
+.front {
+  background-color: green;
+}
+.back {
+  background-color: blue;
+}
