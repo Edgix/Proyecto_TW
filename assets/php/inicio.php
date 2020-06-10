@@ -97,7 +97,7 @@
                 <div class="carousel-inner">
                     <?php
                     $conn = mysqli_connect("localhost", "root", "root1234", "Domingo");
-                    $sqlQuery = "SELECT * FROM serie WHERE idClasificacion = 3 ORDER BY serie.idSerie ASC";
+                    $sqlQuery = "SELECT * FROM serie WHERE idClasificacion = 4 ORDER BY serie.idSerie ASC";
                     $resultSet = mysqli_query($conn, $sqlQuery);
                     $setActive = 0;
                     $sliderHtml = '';
