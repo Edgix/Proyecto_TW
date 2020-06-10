@@ -10,8 +10,6 @@
     <script src="../js/bootstrap.min.js"></script>
     <link id="estilo" rel="stylesheet" href="../css/bootstrap.min.css">
     <link id="estilo" rel="stylesheet" href="../css/estilo.css">
-5
-
     <title>Domingo</title>
 </head>
 
@@ -26,9 +24,15 @@
                 <ul>
                     <li class="submenu"><a href="#" class="ne">&#9776;</a>
                         <ul class="children">
-                            <li><a href="">Perfil 1</a></li>
-                            <li><a href="">Perfil 2</a></li>
-                            <li><a href="">Perfil 3</a></li>
+                            <?php
+                            $usua=$_SESSION["usuario"] ;
+                            include("conectar.php");
+                            $query = "SELECT * FROM `perfil` ORDER BY 'idCuenta' = '$usua' ";
+                            $resultado = $conexion->query($query);
+                            while ($valores = mysqli_fetch_array($resultado)) {
+                                echo '<li><a href="">' . $valores["nombre"] . ' </a></li';
+                            }
+                            ?>
                             <li><a href="">Agregar Perfil</a></li>
                             <li class="cerrar-sesion"><a href="../../includes/logout.php">Cerrar sesión</a></li>
                         </ul>
@@ -45,20 +49,20 @@
         <div class="contenedor">
             <img src="../images/logo.png" title="Logo" alt="Site logo" />
             <nav>
-                <a href="#" class="activo"> Inicio</a> 
+                <a href="#" class="activo"> Inicio</a>
                 <a href="#"> Programas </a>
                 <a href="#"> Películas </a>
                 <a href="#"> Más Recientes </a>
                 <a href="#"> Mi lista </a>
                 <a href="#" class="buscador">
-                    Buscar: 
+                    Buscar:
                     <input id="buscador" type="input" value="">
                 </a>
             </nav>
         </div>
     </header>
     <h3>Tus peliculas:</h3>
-                </br>
+    </br>
     <div class="container">
         <div class="col-md-15">
             <div class="carousel slide multi-image-slider" id="theCarousel">
@@ -76,9 +80,9 @@
                             $activeClass = 'active';
                         }
                         $sliderHtml .= "<div class='item " . $activeClass . "'>";
-                        $sliderHtml .= "<div class='col-xs-2'><a href='" . $sliderImage['idPelicula'] . "'>";
+                        $sliderHtml .= "<div class='col-xs-2'>";
                         $sliderHtml .= "<img src='../images/peliculas/" . $sliderImage['Imagen'] . "' class='img-responsive'>";
-                        $sliderHtml .= "</a></div></div>";
+                        $sliderHtml .= "</div></div>";
                     }
                     echo $sliderHtml;
                     ?>
@@ -86,11 +90,11 @@
                 <a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
                 <a class="right carousel-control" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
             </div>
-            
+
         </div>
     </div>
-   <h3>Tus series:</h3>
-                </br>
+    <h3>Tus series:</h3>
+    </br>
     <div class="container">
         <div class="col-md-15">
             <div class="carousel slide multi-image-slider" id="theCarousel2">
@@ -118,7 +122,7 @@
                 <a class="left carousel-control" href="#theCarousel2" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
                 <a class="right carousel-control" href="#theCarousel2" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
             </div>
-            
+
         </div>
     </div>
     <script src="../js/main.js"></script>
