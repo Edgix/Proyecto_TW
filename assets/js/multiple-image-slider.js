@@ -1,6 +1,6 @@
 $('.multi-image-slider').carousel({
 
-    interval: 40000
+    interval: 4000
 
 });
 

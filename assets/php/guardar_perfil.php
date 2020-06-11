@@ -13,16 +13,15 @@ $variable1 = " PHP 5";
   include("conectar.php");
   session_start();
   $_SESSION['usuario'];
-  $nepe = $_SESSION['usuario'];
+  $usu = $_SESSION['usuario'];
   $nombre = $_POST['nombreP'];
   $varcheck = $_POST['check'];
   $idioma = $_POST['idioma'];
-  $query = "INSERT INTO `perfil` (`nombre`, `idioma`, `foto`, `idCuenta`, `idClasificacion`) VALUES  ('$nombre', '$idioma', 'nepe.jpg', '$nepe','2')";
-
+  $query = "INSERT INTO `perfil` (`nombre`, `idioma`, `foto`, `idCuenta`, `idClasificacion`) VALUES  ('$nombre', '$idioma', 'nepe.jpg', '$usu','$varcheck')";
 
   //$resultado= $conexion->query($query);S
   if (mysqli_query($conexion, $query)) {
-    $_SESSION['perfil'] = $varcheck;
+    $_SESSION["perfil"] = $varcheck;
     header("location: inicio.php");
   } else {
     echo "Error: " . $query . "<br>" . mysqli_error($conexion);

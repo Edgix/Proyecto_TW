@@ -30,15 +30,14 @@
                             include("conectar.php");
                             $query = "SELECT * FROM `perfil` WHERE `idCuenta` = '$usu'";
                             $resultado = $conexion->query($query);
+                            $cont = 1;
                             while ($valores = mysqli_fetch_array($resultado)) {
-                                echo '<li class= "eperfil"> <a>' . $valores["nombre"] . '</a></li>';
+
+                                echo '<li> <a  href="#" class= "perf "id= " ' . $valores["idPerfil"] . ' ">' . $valores["nombre"] . '</a></li>';
+                                $cont++;
                             }
                             ?>
-                            <li><a href="">Agregar Perfil</a></li>
-
-
-
-
+                            <li><a href="agregar_perfil.php">Agregar Perfil</a></li>
                             <li class="cerrar-sesion"><a href="../../includes/logout.php">Cerrar sesión</a></li>
                         </ul>
                     </li>
@@ -66,7 +65,7 @@
             </nav>
         </div>
     </header>
-    <div class= "Carruseles">
+    <div class="Carruseles">
 
     </div>
     <script src="../js/main.js"></script>
@@ -76,7 +75,22 @@
     <script>
         $(document).ready(function() {
             $(".Carruseles").load('carruseles.php');
+            $(".perf").click(function(evento) {
+                evento.preventDefault();
+                $.ajax({
+                    url: 'perfil.php',
+                    data: 'perfil=' + $(this).attr('id'),
+                    type: "POST",
+                    success: function(data) {
+                        $(".Carruseles").load('carruseles.php');
+                    }
+                });
+            });
+
+
         });
+    </script>
+    <script>
     </script>
 </body>
 
