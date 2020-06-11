@@ -38,14 +38,10 @@
                             }
                             ?>
                             <li><a href="agregar_perfil.php">Agregar Perfil</a></li>
-                            <li class="cerrar-sesion"><a href="../../includes/logout.php">Cerrar sesión</a></li>
+                            <li class="cerrar-sesion"><a href="logout.php">Cerrar sesión</a></li>
                         </ul>
                     </li>
                 </ul>
-                <!-- <button class="switch" id="switch">
-                    <span><i class="fas fa-sun"></i></span>
-                    <span><i class="fas fa-moon"></i></span>
-            </button> -->
             </header>
         </div>
     </nav>

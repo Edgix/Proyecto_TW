@@ -62,7 +62,7 @@
                 <span><i class="fas fa-moon"></i></span>
             </button>
             <span>
-                <i class="cerrar-sesion"><a href="../../includes/logout.php">Cerrar sesión</a></i>		
+                <i class="cerrar-sesion"><a href="logout.php">Cerrar sesión</a></i>		
             </span>			
         </nav>
 

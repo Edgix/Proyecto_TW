@@ -30,7 +30,7 @@
             <span><i class="fas fa-moon"></i></span>
         </button>
         <span>
-            <i class="cerrar-sesion"><a href="../../includes/logout.php">Cerrar sesión</a></i>
+            <li class="cerrar-sesion"><a href="logout.php">Cerrar sesión</a></li>
         </span>
     </nav>
 
@@ -42,6 +42,15 @@
                 <img src="../images/logo.png" title="Logo" alt="Domingo logo">
                 <h2>Crea tu perfil!</h2>
             </div>
+
+            <label>Selecciona una foto para tu perfil!</label>
+            <center>
+                <label><input type="image" src="../images/user.png" width="50px" name="user" id="user"></label>
+                <label><input type="image" src="../images/user1.png" width="50px" name="user1" id="user1"></label>
+                <label><input type="image" src="../images/user2.png" width="50px" name="user2" id="user2"></label>
+                <label><input type="image" src="../images/user3.png" width="50px" name="user3" id="user3"></label>
+                <label><input type="image" src="../images/user4.png" width="50px" name="user4" id="user4"></label>
+            </center>
 
             <form name="formularioPerfil" action="guardar_perfil.php" method="POST" onsubmit="return comprobarDatosFormulario()">
 
@@ -64,7 +73,7 @@
                     <option value='ingles'>Ingles</option>
                 </select>
 
-
+                <input type="text" id="nombre" name="foto" style="display:none"><br>
 
                 <label><input id="botonEnvio1" type="submit" value="Enviar"></label>
 
@@ -75,6 +84,7 @@
     </div>
 
     <script src="../js/main.js"></script>
+    <script src="avatar.js"></script>
 </body>
 <script>
 </script>

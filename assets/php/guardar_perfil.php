@@ -17,7 +17,8 @@ $variable1 = " PHP 5";
   $nombre = $_POST['nombreP'];
   $varcheck = $_POST['check'];
   $idioma = $_POST['idioma'];
-  $query = "INSERT INTO `perfil` (`nombre`, `idioma`, `foto`, `idCuenta`, `idClasificacion`) VALUES  ('$nombre', '$idioma', 'nepe.jpg', '$usu','$varcheck')";
+  $foto = $_POST['foto'];
+  $query = "INSERT INTO `perfil` (`nombre`, `idioma`, `foto`, `idCuenta`, `idClasificacion`) VALUES  ('$nombre', '$idioma', '$foto', '$usu','$varcheck')";
 
   //$resultado= $conexion->query($query);S
   if (mysqli_query($conexion, $query)) {
