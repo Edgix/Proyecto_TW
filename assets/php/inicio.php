@@ -58,10 +58,13 @@
                 <a href="#"> Películas </a>
                 <a href="#"> Más Recientes </a>
                 <a href="#"> Mi lista </a>
-                <a href="#" class="buscador">
-                    Buscar:
-                    <input id="buscador" type="input" value="">
-                </a>
+                <div class="input-group input-group-sm">
+                <input class="search_query form-control" type="text" name="key" id="key" placeholder="Buscar..." val="">
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-info btn-flat"><i class="fa fa-search"></i></button>
+                </span>
+        </div>
+<div id="suggestions"></div>
             </nav>
         </div>
     </header>
@@ -89,6 +92,29 @@
 
 
         });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#key').on('keyup', function() {
+                var key = $(this).val();		
+                var dataString = 'key='+key;
+            $.ajax({
+                    type: "POST",
+                    url: "buscar.php",
+                    data: dataString,
+                    success: function(data) {
+                        //Escribimos las sugerencias que nos manda la consulta
+                        $('#suggestions').fadeIn(1000).html(data);
+                        //Al hacer click en alguna de las sugerencias
+                        $('#suggestions').on('click', function(){
+                                $('#suggestions').fadeOut(1000);
+                                return false;
+                        });
+                        
+                    }
+                });
+            });
+        }); 
     </script>
     <script>
     </script>
